@@ -1,0 +1,59 @@
+{
+  "products": {
+    "nodes": [
+      {
+        "width": 256,
+        "height": 246,
+        "data": {},
+        "id": "service",
+        "position": {
+          "x": 712,
+          "y": 266
+        },
+        "type": "service-node-type",
+        "selected": false,
+        "positionAbsolute": {
+          "x": 712,
+          "y": 266
+        },
+        "dragging": false
+      },
+      {
+        "width": 320,
+        "height": 313,
+        "data": {
+          "id": "custom-code",
+          "config": {
+            "code": "return async (ctx, app) => {\n  if (typeof ctx.data.price === 'number') {\n    ctx.data.price = {\n      currency: 'GHS',\n      value: ctx.data.price\n    }\n  }\n  return ctx\n}"
+          }
+        },
+        "id": "fCuPUHiM",
+        "position": {
+          "x": 217,
+          "y": 304
+        },
+        "type": "hook-node-type",
+        "selected": true,
+        "positionAbsolute": {
+          "x": 217,
+          "y": 304
+        },
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "fCuPUHiM",
+        "sourceHandle": "out-fCuPUHiM",
+        "target": "service",
+        "targetHandle": "before-create",
+        "id": "reactflow__edge-fCuPUHiMout-fCuPUHiM-servicebefore-create"
+      }
+    ],
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "users": {
+    "after": {
+      "create": [
+        [
+          "create-auth-credential"
+        ]
+      ],
+      "find": [],
+      "get": [],
+      "patch": [],
+      "remove": []
+    },
+    "before": {
+      "create": [
+        [
+          "auth-require-password"
+        ]
+      ],
+      "find": [],
+      "get": [],
+      "patch": [],
+      "remove": []
+    }
+  },
+  "products": {
+    "after": {
+      "find": [],
+      "get": [],
+      "create": [],
+      "patch": [],
+      "remove": []
+    },
+    "before": {
+      "find": [],
+      "get": [],
+      "create": [
+        [
+          "custom-code",
+          {
+            "code": "return async (ctx, app) => {\n  if (typeof ctx.data.price === 'number') {\n    ctx.data.price = {\n      currency: 'GHS',\n      value: ctx.data.price\n    }\n  }\n  return ctx\n}"
+          }
+        ]
+      ],
+      "patch": [],
+      "remove": []
+    }
+  }
+}

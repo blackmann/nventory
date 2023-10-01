@@ -1,0 +1,17 @@
+{
+  "amount": {
+    "name": "amount",
+    "schema": {
+      "value": {
+        "type": "number",
+        "required": true,
+        "unique": false
+      },
+      "currency": {
+        "type": "string",
+        "required": true,
+        "unique": false
+      }
+    }
+  }
+}
