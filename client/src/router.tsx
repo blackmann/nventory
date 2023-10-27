@@ -5,15 +5,24 @@ import ProductDetail from './pages/[project]/products/[product]'
 import NewProduct from './pages/[project]/products/new'
 import { getProjectFromSlug, loadProjects, projects } from './lib/projects'
 import request from './lib/request'
+import Login from './pages/login'
+import ErrorPage, { AppError } from './pages/error'
 
 const router = createBrowserRouter([
   {
+    path: '/login',
+    element: <Login />,
+  },
+  {
     path: '/',
     loader: async () => {
-      await loadProjects()
-      return null
+      try {
+        await loadProjects()
+        return null
+      } catch {}
     },
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: ':project',
@@ -27,17 +36,21 @@ const router = createBrowserRouter([
             id: 'products',
             element: <Project />,
             loader: async ({ params }) => {
-              if (projects.peek().length === 0) {
-                await loadProjects()
+              try {
+                if (projects.peek().length === 0) {
+                  await loadProjects()
+                }
+
+                const project = getProjectFromSlug(params.project!)
+
+                const { data } = await request.get(
+                  `/products?project=${project?._id}`
+                )
+
+                return data.data
+              } catch (err) {
+                throw new AppError('Failed to load projects or products', err)
               }
-
-              const project = getProjectFromSlug(params.project!)
-
-              const { data } = await request.get(
-                `/products?project=${project?._id}`
-              )
-
-              return data.data
             },
             children: [
               {

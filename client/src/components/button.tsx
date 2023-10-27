@@ -8,7 +8,7 @@ const Button = React.forwardRef<
   <button
     ref={ref}
     className={clsx(
-      'bg-blue-600 text-white rounded-md p-1 flex items-center',
+      'bg-blue-600 text-white rounded-md p-1 flex items-center font-medium',
       className
     )}
     {...props}

@@ -32,9 +32,23 @@
       "remove": []
     },
     "before": {
-      "find": [],
-      "get": [],
+      "find": [
+        [
+          "require-auth",
+          null
+        ]
+      ],
+      "get": [
+        [
+          "require-auth",
+          null
+        ]
+      ],
       "create": [
+        [
+          "require-auth",
+          null
+        ],
         [
           "custom-code",
           {
@@ -42,8 +56,60 @@
           }
         ]
       ],
+      "patch": [
+        [
+          "require-auth",
+          null
+        ],
+        [
+          "custom-code",
+          {
+            "code": "return async (ctx, app) => {\n  if (typeof ctx.data.price === 'number') {\n    ctx.data.price = {\n      currency: 'GHS',\n      value: ctx.data.price\n    }\n  }\n  return ctx\n}"
+          }
+        ]
+      ],
+      "remove": []
+    }
+  },
+  "projects": {
+    "after": {
+      "find": [],
+      "get": [],
+      "create": [],
       "patch": [],
       "remove": []
+    },
+    "before": {
+      "find": [
+        [
+          "require-auth",
+          null
+        ]
+      ],
+      "get": [
+        [
+          "require-auth",
+          null
+        ]
+      ],
+      "create": [
+        [
+          "require-auth",
+          null
+        ]
+      ],
+      "patch": [
+        [
+          "require-auth",
+          null
+        ]
+      ],
+      "remove": [
+        [
+          "require-auth",
+          null
+        ]
+      ]
     }
   }
 }

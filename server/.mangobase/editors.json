@@ -29,14 +29,33 @@
         },
         "id": "fCuPUHiM",
         "position": {
-          "x": 217,
-          "y": 304
+          "x": 263,
+          "y": 398
         },
         "type": "hook-node-type",
-        "selected": true,
+        "selected": false,
         "positionAbsolute": {
-          "x": 217,
-          "y": 304
+          "x": 263,
+          "y": 398
+        },
+        "dragging": false
+      },
+      {
+        "width": 320,
+        "height": 60,
+        "data": {
+          "id": "require-auth"
+        },
+        "id": "xAEvOvT2",
+        "position": {
+          "x": -220,
+          "y": 263
+        },
+        "type": "hook-node-type",
+        "selected": false,
+        "positionAbsolute": {
+          "x": -220,
+          "y": 263
         },
         "dragging": false
       }
@@ -47,12 +66,122 @@
         "sourceHandle": "out-fCuPUHiM",
         "target": "service",
         "targetHandle": "before-create",
-        "id": "reactflow__edge-fCuPUHiMout-fCuPUHiM-servicebefore-create"
+        "id": "reactflow__edge-fCuPUHiMout-fCuPUHiM-servicebefore-create",
+        "selected": true
+      },
+      {
+        "source": "fCuPUHiM",
+        "sourceHandle": "out-fCuPUHiM",
+        "target": "service",
+        "targetHandle": "before-patch",
+        "id": "reactflow__edge-fCuPUHiMout-fCuPUHiM-servicebefore-patch"
+      },
+      {
+        "source": "xAEvOvT2",
+        "sourceHandle": "out-xAEvOvT2",
+        "target": "service",
+        "targetHandle": "before-find",
+        "id": "reactflow__edge-xAEvOvT2out-xAEvOvT2-servicebefore-find"
+      },
+      {
+        "source": "xAEvOvT2",
+        "sourceHandle": "out-xAEvOvT2",
+        "target": "service",
+        "targetHandle": "before-get",
+        "id": "reactflow__edge-xAEvOvT2out-xAEvOvT2-servicebefore-get"
+      },
+      {
+        "source": "xAEvOvT2",
+        "sourceHandle": "out-xAEvOvT2",
+        "target": "fCuPUHiM",
+        "targetHandle": "in-fCuPUHiM",
+        "id": "reactflow__edge-xAEvOvT2out-xAEvOvT2-fCuPUHiMin-fCuPUHiM",
+        "selected": false
       }
     ],
     "viewport": {
-      "x": 0,
-      "y": 0,
+      "x": 316,
+      "y": -20,
+      "zoom": 1
+    }
+  },
+  "projects": {
+    "nodes": [
+      {
+        "width": 256,
+        "height": 246,
+        "data": {},
+        "id": "service",
+        "position": {
+          "x": 500,
+          "y": 300
+        },
+        "type": "service-node-type",
+        "positionAbsolute": {
+          "x": 500,
+          "y": 300
+        }
+      },
+      {
+        "width": 320,
+        "height": 60,
+        "data": {
+          "id": "require-auth"
+        },
+        "id": "xDVP0OaY",
+        "position": {
+          "x": -7,
+          "y": 379
+        },
+        "type": "hook-node-type",
+        "selected": false,
+        "positionAbsolute": {
+          "x": -7,
+          "y": 379
+        },
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "xDVP0OaY",
+        "sourceHandle": "out-xDVP0OaY",
+        "target": "service",
+        "targetHandle": "before-find",
+        "id": "reactflow__edge-xDVP0OaYout-xDVP0OaY-servicebefore-find"
+      },
+      {
+        "source": "xDVP0OaY",
+        "sourceHandle": "out-xDVP0OaY",
+        "target": "service",
+        "targetHandle": "before-get",
+        "id": "reactflow__edge-xDVP0OaYout-xDVP0OaY-servicebefore-get"
+      },
+      {
+        "source": "xDVP0OaY",
+        "sourceHandle": "out-xDVP0OaY",
+        "target": "service",
+        "targetHandle": "before-create",
+        "id": "reactflow__edge-xDVP0OaYout-xDVP0OaY-servicebefore-create"
+      },
+      {
+        "source": "xDVP0OaY",
+        "sourceHandle": "out-xDVP0OaY",
+        "target": "service",
+        "targetHandle": "before-patch",
+        "id": "reactflow__edge-xDVP0OaYout-xDVP0OaY-servicebefore-patch"
+      },
+      {
+        "source": "xDVP0OaY",
+        "sourceHandle": "out-xDVP0OaY",
+        "target": "service",
+        "targetHandle": "before-remove",
+        "id": "reactflow__edge-xDVP0OaYout-xDVP0OaY-servicebefore-remove"
+      }
+    ],
+    "viewport": {
+      "x": 242,
+      "y": 32,
       "zoom": 1
     }
   }

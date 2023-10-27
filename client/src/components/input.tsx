@@ -6,7 +6,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
     <input
       ref={ref}
       type="text"
-      className={clsx('border rounded-md border-slate-200 p-1 w-full', className)}
+      className={clsx('border rounded-md border-zinc-200 p-1 w-full focus:border-zinc-400', className)}
       {...props}
     />
   )

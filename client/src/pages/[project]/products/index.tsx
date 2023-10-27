@@ -19,7 +19,7 @@ function Project() {
                 </span>{' '}
                 Products{' '}
                 <span className="bg-zinc-200 text-zinc-500 rounded-md px-1 ms-2 text-xs">
-                  213
+                  {products.length}
                 </span>
               </h1>
 
